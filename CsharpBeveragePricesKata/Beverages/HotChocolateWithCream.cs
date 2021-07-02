@@ -1,10 +1,18 @@
 namespace CsharpBeveragePricesKata.Beverages
 {
-    public class HotChocolateWithCream : HotChocolate
+    public class HotChocolateWithCream : Beverage
     {
-        public override double price()
+        const double MILK_PRICING = 0.15;
+
+        private double hotChocolatePrice;
+
+        public HotChocolateWithCream(Beverage hotChocolate) 
         {
-            return 1.45 + 0.15;
+            this.hotChocolatePrice = hotChocolate.price();
+        }
+        public double price()
+        {
+            return  this.hotChocolatePrice + MILK_PRICING;
         }
     }
 }

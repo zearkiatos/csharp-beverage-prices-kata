@@ -1,10 +1,18 @@
 namespace CsharpBeveragePricesKata.Beverages
 {
-    public class TeaWithMilk : Tea
+    public class TeaWithMilk : Beverage
     {
-        public override double price()
+        const double MILK_PRICING = 0.10;
+        private double teaPrice;
+
+        public TeaWithMilk(Beverage tea)
         {
-            return base.price() + 0.10;
+            this.teaPrice = tea.price();
+        }
+
+        public double price()
+        {
+            return teaPrice + MILK_PRICING;
         }
     }
 }

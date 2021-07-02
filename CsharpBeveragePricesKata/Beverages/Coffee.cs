@@ -2,9 +2,10 @@ namespace CsharpBeveragePricesKata.Beverages
 {
     public class Coffee : Beverage
     {
-        public virtual double price()
+        const double COFFEE_PRICING = 1.2;
+        public double price()
         {
-            return 1.2;
+            return COFFEE_PRICING;
         }
     }
 }
