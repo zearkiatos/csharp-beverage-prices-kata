@@ -6,13 +6,21 @@ namespace CsharpBeveragePricesKata.Beverages
 
         private double hotChocolatePrice;
 
+        private double cinnamonSupplementPrice = 0;
+
         public HotChocolateWithCream(Beverage hotChocolate) 
         {
             this.hotChocolatePrice = hotChocolate.price();
         }
+
+        public HotChocolateWithCream(Beverage hotChocolate, Beverage cinnamonSupplement) 
+        {
+            this.hotChocolatePrice = hotChocolate.price();
+            this.cinnamonSupplementPrice = cinnamonSupplement.price();
+        }
         public double price()
         {
-            return  this.hotChocolatePrice + MILK_PRICING;
+            return  this.hotChocolatePrice + this.cinnamonSupplementPrice + MILK_PRICING;
         }
     }
 }

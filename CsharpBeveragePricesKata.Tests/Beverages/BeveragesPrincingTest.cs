@@ -56,6 +56,57 @@ namespace CsharpBeveragePricesKata.Tests.Beverages
         }
 
 
+        [Fact]
+        public void Should_Computes_Coffee_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage coffeeWithCinnamonSupplement = new Coffee(new CinnamonSupplement());
+            Assert.Equal(coffeeWithCinnamonSupplement.price(), 1.7);
+        }
+
+        [Fact]
+        public void Should_Computes_Tea_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage teaWithCinnamonSupplement = new Tea(new CinnamonSupplement());
+            Assert.Equal(teaWithCinnamonSupplement.price(), 2);
+        }
+
+        [Fact]
+        public void Should_Computes_Hot_Chocolate_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage hotChocolateWithCinnamonSupplement = new HotChocolate(new CinnamonSupplement());
+            Assert.Equal(hotChocolateWithCinnamonSupplement.price(), 1.95);
+        }
+
+        [Fact]
+        public void Should_Computes_Tea_With_Milk_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage teaWithMilkAndCinnamonSupplement = new TeaWithMilk(new Tea(), new CinnamonSupplement());
+            Assert.Equal(teaWithMilkAndCinnamonSupplement.price(), 2.1);
+        }
+
+        [Fact]
+        public void Should_Computes_Coffee_With_Milk_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage coffeeWithMilkAndCinnamonSupplement = new CoffeeWithMilk(new Coffee(), new CinnamonSupplement());
+            Assert.Equal(coffeeWithMilkAndCinnamonSupplement.price(), 1.8);
+        }
+
+                
+        [Fact]
+        public void Should_Computes_Coffee_With_Milk_And_Cream_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage coffeeWithMilkAndCreamAndCinnamonSupplement = new CoffeeWithMilkAndCream(new Coffee(), new CinnamonSupplement());
+            Assert.Equal(coffeeWithMilkAndCreamAndCinnamonSupplement.price(), 1.95);
+        }
+
+        [Fact]
+        public void Should_Computes_Hot_Chocolate_Milk_Cream_With_Optional_Cinnamon_Supplement_Price()
+        {
+            Beverage hotChocolateWithCreamAndCinnamonSupplement = new HotChocolateWithCream(new HotChocolate(), new CinnamonSupplement());
+            Assert.Equal(hotChocolateWithCreamAndCinnamonSupplement.price(), 2.1);
+        }
+
+
 
     }
 }
